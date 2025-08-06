@@ -1,87 +1,80 @@
-Vapi Outbound Call Campaign Project
-This project demonstrates an automated outbound call campaign using Vapi's AI receptionist. The goal is to showcase the value of an AI receptionist to local businesses by calling them after hours and highlighting missed lead opportunities.
+# 📞 Vapi Outbound Call Campaign Project
 
-Table of Contents
-Project Overview
+This project demonstrates an automated outbound call campaign using **Vapi's AI receptionist**. The goal is to showcase the value of an AI receptionist to **local businesses** by calling them **after hours** and highlighting **missed lead opportunities**.
 
-Features
+---
 
-Setup Instructions (Local)
+## 📚 Table of Contents
 
-Prerequisites
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Setup Instructions (Local)](#setup-instructions-local)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+  - [Running the Application (Local)](#running-the-application-local)
+- [🚀 Deployment to Render](#deployment-to-render)
+- [📁 Project Structure](#project-structure)
+- [📞 Campaign Details](#campaign-details)
+- [📄 License](#license)
 
-Installation
+---
 
-Configuration
+## 🧠 Project Overview
 
-Running the Application (Local)
+This **Node.js** application orchestrates an outbound call campaign using the **Vapi API**. It reads a list of businesses from a `JSON` file, schedules calls to them with a specified delay, and uses pre-defined AI assistants to deliver a message about **after-hours lead capture**.
 
-Deployment to Render
+### The project includes:
+- An **Express.js** server to handle API requests.
+- Integration with the **Vapi API** for scheduling outbound calls.
+- A **configurable list of target businesses**.
+- **A/B testing** with different AI assistant scripts.
 
-Project Structure
+---
 
-Campaign Details
+## ✨ Features
 
-License
+- **📞 Automated Outbound Calling:** Schedules calls to a list of phone numbers.
+- **⏱️ Configurable Call Timing:** Allows setting delays between calls.
+- **🧪 A/B Testing:** Supports using multiple Vapi AI assistants/scripts for comparison.
+- **📄 Dynamic Business List:** Reads target businesses from a `businessList.json` file.
+- **🤖 Vapi Integration:** Leverages Vapi's robust platform for AI voice interaction.
 
-Project Overview
-This Node.js application orchestrates an outbound call campaign using the Vapi API. It reads a list of businesses from a JSON file, schedules calls to them with a specified delay, and uses a pre-defined AI assistant to deliver a message about after-hours lead capture.
+---
 
-The project includes:
+## 🛠️ Setup Instructions (Local)
 
-An Express.js server to handle API requests.
+### Prerequisites
 
-Integration with the Vapi API for scheduling outbound calls.
+Make sure you have the following installed:
 
-A configurable list of target businesses.
+- [Node.js](https://nodejs.org/) (LTS version recommended)
+- npm (comes with Node.js)
+- A [Vapi Account](https://www.vapi.ai/) with:
+  - **API Key**
+  - **Phone Number ID**
+  - At least **two Assistant IDs** (for A/B testing)
 
-Logic for A/B testing different AI assistant scripts.
+---
 
-Features
-Automated Outbound Calling: Schedules calls to a list of phone numbers.
+### 📥 Installation
 
-Configurable Call Timing: Allows setting delays between calls.
-
-A/B Testing: Supports using multiple Vapi AI assistants/scripts for comparison.
-
-Dynamic Business List: Reads target businesses from a businessList.json file.
-
-Vapi Integration: Leverages Vapi's robust platform for AI voice interaction.
-
-Setup Instructions (Local)
-Prerequisites
-Before you begin, ensure you have the following installed:
-
-Node.js (LTS version recommended)
-
-npm (Node Package Manager, comes with Node.js)
-
-A Vapi Account with an API Key, a configured Phone Number ID, and at least two Assistant IDs (for A/B testing).
-
-Installation
-Clone the repository:
 
 git clone https://github.com/DhruvalAnandkar/Vapi-Outbound-Campaign.git
 cd Vapi-Outbound-Campaign
-
-Install dependencies:
-
 npm install
 
-Configuration
-Create a .env file:
-In the root of your project directory, create a file named .env. This file will store your sensitive API keys and other configurations.
+##⚙️ Configuration
+1. Create a .env file in the root of your project:
 
 VAPI_API_KEY="YOUR_VAPI_API_KEY"
 PHONE_NUMBER_ID="YOUR_VAPI_PHONE_NUMBER_ID"
-ASSISTANT_ID1="YOUR_FIRST_VAPI_ASSISTANT_ID" # e.g., for the "Riley" persona
-ASSISTANT_ID2="YOUR_SECOND_VAPI_ASSISTANT_ID" # e.g., for the "Zoe" persona
+ASSISTANT_ID1="YOUR_FIRST_VAPI_ASSISTANT_ID"   # e.g., for "Riley"
+ASSISTANT_ID2="YOUR_SECOND_VAPI_ASSISTANT_ID"  # e.g., for "Zoe"
 
-Important: Do NOT commit your .env file to version control (it's already included in .gitignore).
+2. Prepare businessList.json:
 
-Prepare businessList.json:
-Ensure you have a businessList.json file in the root of your project. This file should contain an array of objects, each representing a business to call. Example structure:
-
+Create a file in the root with the following format:
 [
   {
     "name": "Stonecreek Dental Care",
@@ -91,64 +84,81 @@ Ensure you have a businessList.json file in the root of your project. This file 
     "name": "Ashland Dental Arts",
     "number": "+14194960132"
   }
-  // ... more businesses
 ]
 
-Ensure phone numbers are in E.164 format (e.g., +1XXXXXXXXXX).
+☎️ Ensure all phone numbers are in E.164 format (e.g., +1XXXXXXXXXX)
 
-Running the Application (Local)
+##▶️ Running the Application (Local)
 Start the server:
 
 npm start
+You should see:
 
-You should see output similar to:
 🚀 Server running at http://localhost:3000
-To start campaign, visit http://localhost:3000/api/start-campaign in your browser.
+Trigger the campaign by visiting:
 
-Trigger the campaign:
-Open your web browser and navigate to:
 http://localhost:3000/api/start-campaign
+🧠 The server will start scheduling calls and log each scheduled attempt.
 
-The server will then begin scheduling calls with Vapi, and you will see logs in your terminal confirming each scheduled call.
+##🚀 Deployment to Render
+This app is Render-ready for seamless cloud deployment.
 
-Deployment to Render
-This application is designed to be easily deployed to a platform like Render for continuous operation.
+🧾 Steps:
+1. Push the project to GitHub.
+2. Go to Render and create a new Web Service.
 
-GitHub Repository: Ensure your project is pushed to a GitHub repository. The package.json file must be in the root of the repository.
+3. Connect it to your GitHub repo.
 
-Render Web Service: Create a new Web Service on Render.com and connect it to your GitHub repository.
+4. In the Render service settings:
 
-Root Directory: In Render's service settings, ensure the "Root Directory" is set to vapi-test-project (or the name of your main project folder if it's not in the root of your repo).
+Root Directory: Set to vapi-test-project (or the name of your main folder).
 
-Environment Variables: Add all your VAPI_API_KEY, PHONE_NUMBER_ID, ASSISTANT_ID1, and ASSISTANT_ID2 as environment variables in Render's dashboard.
+Environment Variables: Add:
 
-Build & Start Commands: Render will automatically detect npm install for the build command and node index.js (from your start script in package.json) for the start command.
+VAPI_API_KEY
 
-Trigger Live Campaign: Once deployed and live, trigger the campaign by visiting your Render service's public URL followed by /api/start-campaign (e.g., https://your-service-name.onrender.com/api/start-campaign).
+PHONE_NUMBER_ID
 
-Project Structure
+ASSISTANT_ID1
+
+ASSISTANT_ID2
+
+Build Command: (auto-detected)
+npm install
+
+Start Command:
+node index.js
+
+Once deployed, trigger the campaign via:
+https://your-service-name.onrender.com/api/start-campaign
+
+##📁 Project Structure
 .
 ├── index.js                  # Main application entry point
 ├── package.json              # Project dependencies and scripts
 ├── package-lock.json         # Dependency lock file
-├── .env                      # Environment variables (local only, ignored by Git)
-├── .gitignore                # Specifies files/folders to ignore in Git
+├── .env                      # Environment variables (excluded from Git)
+├── .gitignore                # Git exclusions
 ├── businessList.json         # List of businesses to call
 └── routes/                   # API routes
-    └── call.js               # Handles the call scheduling logic
+    └── call.js               # Call scheduling logic
 
-Campaign Details
-Target Audience: Local service businesses (med spas, dental offices, home services, law firms) in the Ashland, Ohio area.
+##📞 Campaign Details
+🎯 Target Audience: Local service businesses in Ashland, Ohio
 
-Call Timing: Scheduled after typical business hours to demonstrate missed lead opportunities.
+e.g., med spas, dental offices, home services, law firms
 
-AI Assistant Personas:
+🕓 Call Timing: After typical business hours
 
-Riley (Friendly & Patient): Designed for a conversational approach.
+🧑‍💼 AI Assistant Personas:
 
-Zoe (Direct & Efficient): Designed for a concise, to-the-point message.
+Riley – Friendly & Patient (conversational tone)
 
-Call Scheduling: Calls are scheduled with a 7-minute delay between each to simulate a realistic outbound campaign.
+Zoe – Direct & Efficient (concise messaging)
 
-License
-This project is open-source and available under the ISC License.
+⏳ Delay Between Calls: 7 minutes between each call to simulate a natural campaign
+
+📄 License
+This project is licensed under the ISC License.
+
+👨‍💻 Built with ❤️ by Dhruval Anandkar
