@@ -64,7 +64,7 @@ git clone https://github.com/DhruvalAnandkar/Vapi-Outbound-Campaign.git
 cd Vapi-Outbound-Campaign
 npm install
 
-##⚙️ Configuration
+## ⚙️ Configuration
 1. Create a .env file in the root of your project:
 
 VAPI_API_KEY="YOUR_VAPI_API_KEY"
@@ -88,7 +88,7 @@ Create a file in the root with the following format:
 
 ☎️ Ensure all phone numbers are in E.164 format (e.g., +1XXXXXXXXXX)
 
-##▶️ Running the Application (Local)
+## ▶️ Running the Application (Local)
 Start the server:
 
 npm start
@@ -132,7 +132,7 @@ node index.js
 Once deployed, trigger the campaign via:
 https://your-service-name.onrender.com/api/start-campaign
 
-##📁 Project Structure
+## 📁 Project Structure
 .
 ├── index.js                  # Main application entry point
 ├── package.json              # Project dependencies and scripts
@@ -143,7 +143,7 @@ https://your-service-name.onrender.com/api/start-campaign
 └── routes/                   # API routes
     └── call.js               # Call scheduling logic
 
-##📞 Campaign Details
+## 📞 Campaign Details
 🎯 Target Audience: Local service businesses in Ashland, Ohio
 
 e.g., med spas, dental offices, home services, law firms
