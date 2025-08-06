@@ -1,0 +1,12 @@
+[
+  { "name": "Stonecreek Dental Care", "number": "+14192810760", "assistantId": "ASSISTANT_ID1" },
+  { "name": "Ashland Dental Arts", "number": "+14194960132", "assistantId": "ASSISTANT_ID2" },
+  { "name": "9th Street Dental", "number": "+15672177040", "assistantId": "ASSISTANT_ID1" },
+  { "name": "Ashland Drain Cleaning", "number": "+14192893080", "assistantId": "ASSISTANT_ID2" },
+  { "name": "Glass Doctor of Ashland", "number": "+15672034761", "assistantId": "ASSISTANT_ID1" },
+  { "name": "Carothers Pest Control", "number": "+14192896101", "assistantId": "ASSISTANT_ID2" },
+  { "name": "Vinion Law", "number": "+13302622510", "assistantId": "ASSISTANT_ID1" },
+  { "name": "Jeffrey C. Honaker Law", "number": "+14195208967", "assistantId": "ASSISTANT_ID2" },
+  { "name": "VIO Med Spa Strongsville", "number": "+14402386898", "assistantId": "ASSISTANT_ID1" },
+  { "name": "VIO Med Spa Avon", "number": "+14406444846", "assistantId": "ASSISTANT_ID2" }
+]
