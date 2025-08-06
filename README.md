@@ -114,7 +114,7 @@ The server will then begin scheduling calls with Vapi, and you will see logs in 
 Deployment to Render
 This application is designed to be easily deployed to a platform like Render for continuous operation.
 
-GitHub Repository: Ensure your project is pushed to a GitHub repository (as you have done). The package.json file must be in the root of the repository.
+GitHub Repository: Ensure your project is pushed to a GitHub repository. The package.json file must be in the root of the repository.
 
 Render Web Service: Create a new Web Service on Render.com and connect it to your GitHub repository.
 
